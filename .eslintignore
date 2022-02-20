@@ -6,4 +6,4 @@ node_modules
 *debug.log*
 .vscode
 .DS_Store
-
+package
