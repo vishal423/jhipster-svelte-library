@@ -1,0 +1,24 @@
+name: Release svelte blueprint
+on:
+    release:
+        types: [created, edited]
+jobs:
+    publish-svelte-blueprint:
+        runs-on: ubuntu-20.04
+        strategy:
+            fail-fast: true
+        steps:
+            - name: Checkout svelte generator repository
+              uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '16.x'
+                  registry-url: 'https://registry.npmjs.org'
+            - run: npm install
+            - run: npm run lint
+            - run: npm run package
+            - run: |
+                  cd package
+                  npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
