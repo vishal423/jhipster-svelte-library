@@ -1,4 +1,4 @@
-import notificationStore from '$lib/notification/notification-store';
+import notificationStore from '../notification/notification-store';
 
 export function handleResponse(response, notify) {
 	if (notify) {

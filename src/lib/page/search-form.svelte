@@ -2,9 +2,9 @@
 	import { createEventDispatcher } from 'svelte';
 	import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 
-	import Icon from '$lib/icon.svelte';
-	import Form from '$lib/page/form.svelte';
-	import SearchControl from '$lib/search-control.svelte';
+	import Icon from '../icon.svelte';
+	import Form from './form.svelte';
+	import SearchControl from '../search-control.svelte';
 
 	export let testId;
 	export let name;

@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 
-	import Button from '$lib/button.svelte';
+	import Button from './button.svelte';
 
 	export let title;
 	const dispatch = createEventDispatcher();

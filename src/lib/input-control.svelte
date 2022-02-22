@@ -3,10 +3,10 @@
 	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 	import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 
-	import Icon from '$lib/icon.svelte';
-	import Button from '$lib/button.svelte';
-	import { createValidator, validate } from '$lib/utils/validator';
-	import BinaryRecord from '$lib/page/binary-record.svelte';
+	import Icon from './icon.svelte';
+	import Button from './button.svelte';
+	import { createValidator, validate } from './utils/validator';
+	import BinaryRecord from './page/binary-record.svelte';
 
 	export let value = '';
 	export let type = 'text';
@@ -122,7 +122,7 @@
 		{#if ref && (ref.value || value)}
 			<Button
 				name="{name}ClearBtn"
-				role="none"
+				contextualColor="none"
 				classes="dark:text-white text-gray-800 dark:hover:bg-gray-700 hover:bg-gray-300 absolute right-0 pl-2 pr-0 pt-0 pb-1 mr-1 rounded-full"
 				on:click={() => {
 					ref.value = '';

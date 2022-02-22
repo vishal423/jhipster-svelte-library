@@ -3,8 +3,8 @@
 	import { faAngleLeft } from '@fortawesome/free-solid-svg-icons/faAngleLeft';
 	import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 
-	import Button from '$lib/button.svelte';
-	import Icon from '$lib/icon.svelte';
+	import Button from '../button.svelte';
+	import Icon from '../icon.svelte';
 
 	const dispatch = createEventDispatcher();
 	export let totalCount = 0;
@@ -29,7 +29,8 @@
 	<div>{pageStart}-{pageEnd} of {totalCount}</div>
 	<div class="flex flex-row w-36 justify-center items-center">
 		<Button
-			role="action"
+			contextualColor="light"
+			size="small"
 			classes="sm:my-0"
 			disabled={page === 1}
 			on:click={fetchLastPage}
@@ -42,7 +43,8 @@
 			{page}
 		</div>
 		<Button
-			role="action"
+			contextualColor="light"
+			size="small"
 			classes="sm:my-0"
 			disabled={totalCount === 0 || page === pages}
 			on:click={fetchNextPage}

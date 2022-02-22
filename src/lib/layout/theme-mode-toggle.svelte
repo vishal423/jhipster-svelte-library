@@ -3,7 +3,7 @@
 	import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon';
 	import { faSun } from '@fortawesome/free-solid-svg-icons/faSun';
 
-	import Icon from '$lib/icon.svelte';
+	import Icon from '../icon.svelte';
 
 	let darkMode = false;
 	let focused = false;

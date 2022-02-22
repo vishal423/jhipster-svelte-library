@@ -1,5 +1,5 @@
 <script>
-	import PageHeader from '$lib/page/page-header.svelte';
+	import PageHeader from './page-header.svelte';
 
 	export let testId = '';
 	export let width = '';

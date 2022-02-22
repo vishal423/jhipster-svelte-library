@@ -1,7 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 
-	import Pagination from '$lib/table/pagination.svelte';
+	import Pagination from './pagination.svelte';
 
 	export let component;
 	export let clientSidePagination = false;

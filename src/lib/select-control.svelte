@@ -3,8 +3,8 @@
 	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 	import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
 
-	import Icon from '$lib/icon.svelte';
-	import CheckboxControl from '$lib/checkbox-control.svelte';
+	import Icon from './icon.svelte';
+	import CheckboxControl from './checkbox-control.svelte';
 
 	export let name = '';
 	export let value = [];

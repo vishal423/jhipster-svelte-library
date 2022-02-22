@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 
-	import Icon from '$lib/icon.svelte';
+	import Icon from '../icon.svelte';
 
 	export let icon;
 	export let label;

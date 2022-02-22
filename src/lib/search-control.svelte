@@ -1,7 +1,7 @@
 <script>
 	import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 
-	import Icon from '$lib/icon.svelte';
+	import Icon from './icon.svelte';
 
 	export let value = '';
 	export let label;
