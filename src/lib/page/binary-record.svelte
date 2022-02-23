@@ -1,5 +1,5 @@
 <script>
-	import { byteSize, openFile } from '../utils/data-util';
+	import { byteSize, openFile } from '$lib/utils/data-util';
 
 	export let field;
 	export let name;

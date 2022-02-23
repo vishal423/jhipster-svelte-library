@@ -1,7 +1,7 @@
 <script>
 	import { fly } from 'svelte/transition';
 
-	import notification from './notification-store';
+	import { notification } from './notification-store';
 	import Toast from './toast.svelte';
 </script>
 

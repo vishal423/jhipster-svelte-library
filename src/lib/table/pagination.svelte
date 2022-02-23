@@ -3,8 +3,8 @@
 	import { faAngleLeft } from '@fortawesome/free-solid-svg-icons/faAngleLeft';
 	import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 
-	import Button from '../button.svelte';
-	import Icon from '../icon.svelte';
+	import Button from '$lib/button.svelte';
+	import Icon from '$lib/icon.svelte';
 
 	const dispatch = createEventDispatcher();
 	export let totalCount = 0;

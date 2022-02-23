@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 const notificationStore = writable([]);
 
-export default {
+export const notification = {
 	subscribe: notificationStore.subscribe,
 	add: (message, type) => {
 		notificationStore.update(oldState => [...oldState, { message, type }]);

@@ -5,8 +5,8 @@
 
 	import Icon from './icon.svelte';
 	import Button from './button.svelte';
-	import { createValidator, validate } from './utils/validator';
-	import BinaryRecord from './page/binary-record.svelte';
+	import { createValidator, validate } from '$lib/utils/validator';
+	import BinaryRecord from '$lib/page/binary-record.svelte';
 
 	export let value = '';
 	export let type = 'text';

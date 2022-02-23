@@ -3,8 +3,8 @@
 	import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 	import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
 
-	import notification from './notification-store';
-	import Icon from '../icon.svelte';
+	import { notification } from './notification-store';
+	import Icon from '$lib/icon.svelte';
 
 	export let message;
 	export let contextualColor = 'success';

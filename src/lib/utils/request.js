@@ -1,4 +1,4 @@
-import notificationStore from '../notification/notification-store';
+import { notification } from '$lib/notification/notification-store';
 
 export function handleResponse(response, notify) {
 	if (notify) {
@@ -28,7 +28,7 @@ function processAlertHeaders(response, isSuccessResponse) {
 	for (let key of response.headers.keys()) {
 		const isPresent = key.toLowerCase().endsWith(isSuccessResponse ? 'app-alert' : 'app-error');
 		if (isPresent) {
-			notificationStore.add(response.headers.get(key), isSuccessResponse ? 'success' : 'danger');
+			notification.add(response.headers.get(key), isSuccessResponse ? 'success' : 'danger');
 		}
 	}
 }

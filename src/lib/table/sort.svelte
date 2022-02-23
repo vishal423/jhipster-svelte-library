@@ -4,7 +4,7 @@
 	import { faArrowDown } from '@fortawesome/free-solid-svg-icons/faArrowDown';
 	import { faArrowUp } from '@fortawesome/free-solid-svg-icons/faArrowUp';
 
-	import Icon from '../icon.svelte';
+	import Icon from '$lib/icon.svelte';
 
 	export let sortPredicate = '';
 	export let active = false;
