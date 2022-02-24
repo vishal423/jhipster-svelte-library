@@ -1,14 +1,14 @@
-name: Release svelte blueprint
+name: Release JHipster Svelte library
 on:
     release:
-        types: [created, edited]
+        types: [created]
 jobs:
-    publish-svelte-blueprint:
+    publish-svelte-library:
         runs-on: ubuntu-20.04
         strategy:
             fail-fast: true
         steps:
-            - name: Checkout svelte generator repository
+            - name: Checkout svelte library repository
               uses: actions/checkout@v2
             - uses: actions/setup-node@v1
               with:
