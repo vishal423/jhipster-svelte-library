@@ -1,10 +1,19 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-auto'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		adapter: adapter(),
+		vite: {
+			build: {
+				rollupOptions: {
+					output: {
+						manualChunks: undefined,
+					},
+				},
+			},
+		},
 	},
-};
+}
 
-export default config;
+export default config

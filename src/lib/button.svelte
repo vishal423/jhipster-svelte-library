@@ -1,9 +1,9 @@
 <script>
-	export let disabled = false;
-	export let contextualColor = 'primary';
-	export let size = 'normal';
-	export let outline = false;
-	export let classes = '';
+	export let disabled = false
+	export let contextualColor = 'primary'
+	export let size = 'normal'
+	export let outline = false
+	export let classes = ''
 </script>
 
 <button
@@ -21,7 +21,7 @@
 		? 'border-2 border-gray-300 dark:border-gray-700 hover:border-gray-700 dark:hover:border-gray-300 '
 		: ''}
 {classes}"
-	{disabled}
+	disabled="{disabled}"
 	{...$$restProps}
 >
 	<slot />

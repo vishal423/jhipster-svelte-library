@@ -1,7 +1,12 @@
 {
-	"printWidth": 120,
-	"singleQuote": true,
+	"printWidth": 80,
 	"tabWidth": 4,
 	"useTabs": true,
-	"arrowParens": "avoid"
+	"semi": false,
+	"singleQuote": true,
+	"arrowParens": "avoid",
+	"svelteSortOrder": "options-scripts-styles-markup",
+	"svelteStrictMode": true,
+	"svelteBracketNewLine": true,
+	"svelteAllowShorthand": true
 }
