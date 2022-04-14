@@ -1,24 +1,25 @@
 <script>
-	import { onMount } from 'svelte'
+	import { onMount, createEventDispatcher } from 'svelte'
 	import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck'
 	import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle'
 
-	import { notification } from './notification-store'
 	import Icon from '$lib/icon.svelte'
 
 	export let message
 	export let contextualColor = 'success'
 	export let index
 	export let timeout = 3000
+	const dispatch = createEventDispatcher()
 
 	let testId = 'toast'
 	let show = true
 	let closeable = true
 
 	onMount(() => {
-		const ref = setTimeout(() => {
-			notification.remove(message, index)
-		}, timeout)
+		const ref = setTimeout(
+			() => dispatch('timeout', { message, index }),
+			timeout
+		)
 
 		return () => clearTimeout(ref)
 	})

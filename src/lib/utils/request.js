@@ -1,4 +1,4 @@
-import { notification } from '../notification/notification-store'
+import { notificationService } from '../notification/notification-service'
 
 export function handleResponse(response, notify) {
 	if (notify) {
@@ -32,7 +32,7 @@ function processAlertHeaders(response, isSuccessResponse) {
 			.toLowerCase()
 			.endsWith(isSuccessResponse ? 'app-alert' : 'app-error')
 		if (isPresent) {
-			notification.add(
+			notificationService.add(
 				response.headers.get(key),
 				isSuccessResponse ? 'success' : 'danger'
 			)

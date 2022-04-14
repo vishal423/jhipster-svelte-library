@@ -3,6 +3,11 @@
 
 	import { notification } from './notification-store'
 	import Toast from './toast.svelte'
+
+	function remove(event) {
+		const { message, index } = event.detail
+		notification.remove(message, index)
+	}
 </script>
 
 <div class="relative flex justify-center" transition:fly="{{ y: -10 }}">
@@ -11,6 +16,7 @@
 			message="{notification.message}"
 			contextualColor="{notification.type}"
 			index="{index}"
+			on:timeout="{remove}"
 		/>
 	{/each}
 </div>
