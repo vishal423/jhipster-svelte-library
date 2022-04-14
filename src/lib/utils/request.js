@@ -1,4 +1,4 @@
-import { notificationService } from '../notification/notification-service'
+import notificationService from '../notification/notification-service'
 
 export function handleResponse(response, notify) {
 	if (notify) {
