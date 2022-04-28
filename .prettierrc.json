@@ -7,6 +7,5 @@
 	"arrowParens": "avoid",
 	"svelteSortOrder": "options-scripts-styles-markup",
 	"svelteStrictMode": true,
-	"svelteBracketNewLine": true,
 	"svelteAllowShorthand": true
 }
