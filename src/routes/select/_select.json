@@ -1,0 +1,40 @@
+{
+	"blogs": [
+		{
+			"id": "11",
+			"name": "Svelte",
+			"handle": "@svelte"
+		},
+		{
+			"id": "12",
+			"name": "Java",
+			"handle": "@java"
+		}
+	],
+	"tags": [
+		{
+			"id": "11",
+			"name": "Svelte"
+		},
+		{
+			"id": "12",
+			"name": "Java"
+		},
+		{
+			"id": "13",
+			"name": "Javascript"
+		},
+		{
+			"id": "14",
+			"name": "Spring"
+		},
+		{
+			"id": "15",
+			"name": "Spring Boot"
+		},
+		{
+			"id": "16",
+			"name": "Tailwind CSS"
+		}
+	]
+}

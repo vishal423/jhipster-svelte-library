@@ -72,6 +72,8 @@
 				? valueToDispatch[0]
 				: null,
 		})
+
+		event.target.focus()
 	}
 
 	afterUpdate(() => validateRequired())
@@ -111,6 +113,15 @@
 		}
 	}
 
+	function handleEscKey(event) {
+		switch (event.keyCode) {
+			case 27:
+			case 9:
+				isOpen = false
+				break
+		}
+	}
+
 	function navigateOptions(event) {
 		const parent = event.target.closest('div')
 		switch (event.keyCode) {
@@ -119,6 +130,7 @@
 					parent.previousSibling.querySelector('input').focus()
 				} else {
 					isOpen = false
+					parent.parentNode.parentNode.querySelector('input').focus()
 				}
 				break
 			case 40:
@@ -126,6 +138,7 @@
 					parent.nextSibling.querySelector('input').focus()
 				} else {
 					isOpen = false
+					parent.parentNode.parentNode.querySelector('input').focus()
 				}
 				break
 			case 32:
@@ -213,8 +226,8 @@
 			data-test="{name}-bg"
 			tabindex="-1"
 			on:click|preventDefault="{() => (isOpen = false)}"
-			class="fixed block inset-0 w-full h-full z-10 bg-gray-200 dark:bg-gray-700 opacity-50 cursor-default"
-		></button>
+			class="fixed block inset-0 w-full h-full z-100 bg-gray-200 dark:bg-gray-700 opacity-50 cursor-default"
+			on:keydown|preventDefault="{event => handleEscKey(event)}"></button>
 	{/if}
 	<div
 		bind:this="{selectOptions}"

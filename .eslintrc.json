@@ -1,9 +1,21 @@
 {
 	"env": {
 		"node": true,
-		"es6": true
+		"es6": true,
+		"cypress/globals": true,
+		"jest": true,
+		"browser": true
 	},
-	"extends": ["airbnb-base", "plugin:prettier/recommended"],
+	"parserOptions": {
+		"ecmaVersion": 2019,
+		"sourceType": "module"
+	},
+	"extends": [
+		"airbnb-base",
+		"plugin:cypress/recommended",
+		"plugin:prettier/recommended"
+	],
+	"plugins": ["svelte3", "cypress", "jest-dom", "testing-library"],
 	"rules": {
 		"prettier/prettier": "error",
 		"no-use-before-define": [2, "nofunc"],
