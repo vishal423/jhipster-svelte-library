@@ -48,8 +48,6 @@
 		"esbuild": "0.14.38",
 		"eslint": "8.14.0",
 		"eslint-plugin-cypress": "2.12.1",
-		"eslint-config-airbnb-base": "15.0.0",
-		"eslint-config-prettier": "8.5.0",
 		"eslint-plugin-jest-dom": "4.0.1",
 		"eslint-plugin-svelte3": "3.4.1",
 		"eslint-plugin-testing-library": "5.3.1",

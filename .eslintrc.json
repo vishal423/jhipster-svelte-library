@@ -1,27 +1,32 @@
 {
-	"env": {
-		"node": true,
-		"es6": true,
-		"cypress/globals": true,
-		"jest": true,
-		"browser": true
-	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:cypress/recommended",
+		"plugin:jest-dom/recommended"
+	],
 	"parserOptions": {
 		"ecmaVersion": 2019,
 		"sourceType": "module"
 	},
-	"extends": [
-		"airbnb-base",
-		"plugin:cypress/recommended",
-		"plugin:prettier/recommended"
-	],
+	"env": {
+		"es2017": true,
+		"browser": true,
+		"node": true,
+		"cypress/globals": true,
+		"jest": true
+	},
 	"plugins": ["svelte3", "cypress", "jest-dom", "testing-library"],
+	"overrides": [
+		{
+			"files": ["**/*.svelte"],
+			"processor": "svelte3/svelte3"
+		},
+		{
+			"files": ["src/**/*.spec.js"],
+			"extends": ["plugin:testing-library/dom"]
+		}
+	],
 	"rules": {
-		"prettier/prettier": "error",
-		"no-use-before-define": [2, "nofunc"],
-		"no-unused-vars": [2, { "vars": "local", "args": "none" }],
-		"no-underscore-dangle": "off",
-		"prefer-destructuring": "off",
-		"no-multi-assign": "off"
+		"no-unused-vars": "off"
 	}
 }
