@@ -55,7 +55,7 @@
 		"eslint-plugin-jest-dom": "4.0.2",
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-svelte3": "4.0.0",
-		"eslint-plugin-testing-library": "5.5.0",
+		"eslint-plugin-testing-library": "5.5.1",
 		"husky": "8.0.1",
 		"jest": "28.1.0",
 		"jest-environment-jsdom": "28.1.0",
