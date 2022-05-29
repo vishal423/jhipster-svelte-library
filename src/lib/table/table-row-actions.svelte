@@ -9,6 +9,8 @@
 
 	export let id
 	export let visible = false
+	export let disableStateChangeActions = false
+	export let renderStateChangeActions = true
 
 	const dispatch = createEventDispatcher()
 </script>
@@ -32,32 +34,37 @@
 	>
 		<Icon icon="{faEye}" />
 	</Button>
-	<Button
-		name="editBtn"
-		contextualColor="light"
-		size="small"
-		classes="sm:my-0 {visible ? '' : 'hidden'}"
-		title="Edit"
-		aria-label="edit"
-		on:click="{() =>
-			dispatch('update', {
-				id,
-			})}"
-	>
-		<Icon icon="{faPencilAlt}" />
-	</Button>
-	<Button
-		name="deleteBtn"
-		contextualColor="light"
-		size="small"
-		classes="sm:my-0 {visible ? '' : 'hidden'}"
-		title="Delete"
-		aria-label="delete"
-		on:click="{() =>
-			dispatch('delete', {
-				id,
-			})}"
-	>
-		<Icon icon="{faTrashAlt}" />
-	</Button>
+	{#if renderStateChangeActions}
+		<Button
+			name="editBtn"
+			contextualColor="light"
+			disabled="{disableStateChangeActions}"
+			size="small"
+			classes="sm:my-0 {visible ? '' : 'hidden'}"
+			title="Edit"
+			aria-label="edit"
+			on:click="{() =>
+				dispatch('update', {
+					id,
+				})}"
+		>
+			<Icon icon="{faPencilAlt}" />
+		</Button>
+		<Button
+			name="deleteBtn"
+			contextualColor="light"
+			disabled="{disableStateChangeActions}"
+			size="small"
+			classes="sm:my-0 {visible ? '' : 'hidden'}"
+			title="Delete"
+			aria-label="delete"
+			on:click="{() =>
+				dispatch('delete', {
+					id,
+				})}"
+		>
+			<Icon icon="{faTrashAlt}" />
+		</Button>
+	{/if}
+	<slot />
 </div>

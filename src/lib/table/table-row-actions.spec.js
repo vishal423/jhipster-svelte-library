@@ -15,6 +15,36 @@ test('should assert the action buttons are hidden ', () => {
 	expect(screen.getByTestId('rowactions')).toHaveClass('hidden')
 })
 
+test('should not render state change actions', () => {
+	render(TableRowActions, {
+		props: {
+			id: 1,
+			renderStateChangeActions: false,
+		},
+	})
+
+	expect(screen.getByTestId('rowactions')).toHaveClass('hidden')
+	expect(
+		screen.queryByRole('button', { name: /edit/i })
+	).not.toBeInTheDocument()
+	expect(
+		screen.queryByRole('button', { name: /delete/i })
+	).not.toBeInTheDocument()
+})
+
+test('should disable state change actions', () => {
+	render(TableRowActions, {
+		props: {
+			id: 1,
+			disableStateChangeActions: true,
+		},
+	})
+
+	expect(screen.getByTestId('rowactions')).toHaveClass('hidden')
+	expect(screen.getByRole('button', { name: /edit/i })).toBeDisabled()
+	expect(screen.getByRole('button', { name: /delete/i })).toBeDisabled()
+})
+
 test('should dispatch the view event', async () => {
 	const { component } = render(TableRowActions, {
 		props: {
