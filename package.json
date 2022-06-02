@@ -1,6 +1,6 @@
 {
 	"name": "jhipster-svelte-library",
-	"version": "0.5.2",
+	"version": "0.6.0",
 	"description": "Svelte components and utility functions library for use in the JHipster generated projects.",
 	"keywords": [
 		"svelte",
