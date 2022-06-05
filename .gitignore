@@ -8,3 +8,4 @@
 .DS_Store
 package
 .svelte-kit
+cypress/screenshots
