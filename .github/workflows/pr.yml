@@ -1,0 +1,27 @@
+name: Svelte library pull requests
+on:
+    pull_request:
+        branches:
+            - main
+jobs:
+    publish-svelte-library:
+        runs-on: ubuntu-22.04
+        strategy:
+            fail-fast: true
+        steps:
+            - name: Checkout svelte library repository
+              uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '16.x'
+                  registry-url: 'https://registry.npmjs.org'
+            - run: npm ci
+            - name: Check lint errors
+              run: npm run lint
+            - name: Run unit tests
+              run: npm run test
+            - name: Run e2e tests
+              run: |
+                  npm run build
+                  npm run preview &
+                  npm run e2e:ci
