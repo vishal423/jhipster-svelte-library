@@ -3,12 +3,16 @@ describe('Select Component', () => {
 		cy.visit('/select')
 	})
 
-	it('should show the option values', () => {
+	it('should allow to select a single option', () => {
 		cy.getBySel('demoForm')
 			.getByName('blog')
 			.click()
 			.getBySel('blog-bg')
 			.type('{esc}', { force: true })
+	})
+
+	it('should allow to select multiple options', () => {
+		cy.getBySel('demoForm')
 			.getByName('tags')
 			.click()
 			.getBySel('tags-options')
