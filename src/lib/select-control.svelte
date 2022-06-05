@@ -90,7 +90,7 @@
 		dispatch('validate', { valid, message })
 	}
 
-	function toggleOptions() {
+	function toggleOptions(event) {
 		isOpen = !isOpen
 	}
 
@@ -129,16 +129,14 @@
 				if (parent.previousSibling) {
 					parent.previousSibling.querySelector('input').focus()
 				} else {
-					isOpen = false
-					parent.parentNode.parentNode.querySelector('input').focus()
+					parent.parentNode.lastChild.querySelector('input').focus()
 				}
 				break
 			case 40:
 				if (parent.nextSibling) {
 					parent.nextSibling.querySelector('input').focus()
 				} else {
-					isOpen = false
-					parent.parentNode.parentNode.querySelector('input').focus()
+					parent.parentNode.firstChild.querySelector('input').focus()
 				}
 				break
 			case 32:
@@ -200,9 +198,9 @@
 				? displayName.join(', ')
 				: null}"
 			autocomplete="off"
-			on:input="{() => toggleOptions()}"
+			on:input="{event => toggleOptions(event)}"
 			on:keydown="{event => navigateToFirstOption(event)}"
-			on:focus="{() => ((focused = true), toggleOptions())}"
+			on:focus="{event => ((focused = true), toggleOptions(event))}"
 			on:blur="{() => (focused = false)}"
 			{...$$restProps}
 		/>
