@@ -4,7 +4,7 @@ on:
         branches:
             - main
 jobs:
-    publish-svelte-library:
+    svelte-library:
         runs-on: ubuntu-22.04
         strategy:
             fail-fast: true
