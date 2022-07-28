@@ -23,7 +23,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"package": "vite package",
+		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"format": "prettier --write \"{,cypress/**,src/**}*.{js,svelte,json,cjs,md,json}\"",
