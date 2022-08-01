@@ -6,6 +6,8 @@ import InputControl from './input-control.svelte'
 import Modal from './modal.svelte'
 import SearchControl from './search-control.svelte'
 import SelectControl from './select-control.svelte'
+import Password from './password.svelte'
+import PasswordConfirm from './password-confirm.svelte'
 
 export {
 	Alert,
@@ -14,6 +16,8 @@ export {
 	Icon,
 	InputControl,
 	Modal,
+	Password,
+	PasswordConfirm,
 	SelectControl,
 	SearchControl,
 }

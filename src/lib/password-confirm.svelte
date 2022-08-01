@@ -72,7 +72,7 @@
 	let:dirty
 	let:valid
 >
-	<div data-test="{name}Confirm-error" class="flex items-center">
+	<div data-testid="{name}Confirm-error" class="flex items-center">
 		{#if confirmPasswordMismatch}
 			<Icon classes="mr-2" icon="{faExclamationCircle}" />
 			Password and its confirmation do not match

@@ -221,7 +221,7 @@
 	</div>
 	{#if isOpen}
 		<button
-			data-test="{name}-bg"
+			data-testid="{name}-bg"
 			tabindex="-1"
 			on:click|preventDefault="{() => (isOpen = false)}"
 			class="fixed block inset-0 w-full h-full z-100 bg-gray-200 dark:bg-gray-700 opacity-50 cursor-default"
@@ -230,7 +230,7 @@
 	<div
 		bind:this="{selectOptions}"
 		on:keydown|preventDefault="{event => navigateOptions(event)}"
-		data-test="{name}-options"
+		data-testid="{name}-options"
 		class:hidden="{!isOpen}"
 		class="absolute left-0 w-full max-h-60 overflow-auto py-2 bg-white dark:bg-gray-800 border-b-2 rounded shadow-md border-2 z-30 border-t-0 rounded-tl-none rounded-tr-none"
 		class:border-primary-600="{focusedAndValidOrPristine ||
@@ -266,7 +266,7 @@
 <div class="flex flex-col mt-1 pr-3 text-xs text-red-600 dark:text-red-500">
 	<slot message="{message}" dirty="{dirty}" valid="{valid}">
 		{#if dirty && !valid}
-			<div data-test="{name}-error" class="flex items-center">
+			<div data-testid="{name}-error" class="flex items-center">
 				<Icon classes="mr-2" icon="{faExclamationCircle}" />
 				{message}
 			</div>

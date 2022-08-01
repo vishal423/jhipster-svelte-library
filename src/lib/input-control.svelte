@@ -130,7 +130,7 @@
 		/>
 		{#if value}
 			<div
-				data-test="{name}View"
+				data-testid="{name}View"
 				class="absolute left-0 py-3 pl-3 text-xl w-full shadow-none bg-white dark:bg-gray-800 border-gray-400 dark:border-gray-700 border rounded z-1"
 			>
 				<BinaryRecord
@@ -181,7 +181,7 @@
 <div class="flex flex-col mt-1 pr-3 text-xs text-red-600 dark:text-red-500">
 	<slot message="{message}" dirty="{dirty}" valid="{valid}">
 		{#if dirty && !valid}
-			<div data-test="{name}-error" class="flex items-center">
+			<div data-testid="{name}-error" class="flex items-center">
 				<Icon classes="mr-2" icon="{faExclamationCircle}" />
 				{message}
 			</div>

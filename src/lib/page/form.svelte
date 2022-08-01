@@ -4,7 +4,7 @@
 </script>
 
 <form
-	data-test="{testId}Form"
+	data-testid="{testId}Form"
 	class="mt-4 flex flex-col {classes}"
 	{...$$restProps}
 >

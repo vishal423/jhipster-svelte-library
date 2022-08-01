@@ -26,7 +26,7 @@
 	class:dark:text-yellow-900="{contextualColor === 'warning'}"
 	class="px-5 py-3 mt-4 flex justify-between transition-colors duration-150 rounded text-sm"
 >
-	<div data-test="{testId}-{contextualColor}" {...$$restProps}>
+	<div data-testid="{testId}-{contextualColor}" {...$$restProps}>
 		<slot />
 	</div>
 	{#if closeable}

@@ -53,7 +53,7 @@
 		</div>
 		<div
 			class="px-5 py-3"
-			data-test="{testId}-{contextualColor}"
+			data-testid="{testId}-{contextualColor}"
 			{...$$restProps}
 		>
 			{message}

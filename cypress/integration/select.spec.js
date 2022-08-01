@@ -4,18 +4,18 @@ describe('Select Component', () => {
 	})
 
 	it('should allow to select a single option', () => {
-		cy.getBySel('demoForm')
+		cy.getByTestId('demoForm')
 			.getByName('blog')
 			.click()
-			.getBySel('blog-bg')
+			.getByTestId('blog-bg')
 			.type('{esc}', { force: true })
 	})
 
 	it('should allow to select multiple options', () => {
-		cy.getBySel('demoForm')
+		cy.getByTestId('demoForm')
 			.getByName('tags')
 			.click()
-			.getBySel('tags-options')
+			.getByTestId('tags-options')
 			.type('{esc}')
 	})
 })

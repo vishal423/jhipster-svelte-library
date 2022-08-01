@@ -27,7 +27,7 @@
 
 <div
 	class="flex flex-row justify-end items-center w-full {classes}"
-	data-test="pageCtrl"
+	data-testid="pageCtrl"
 >
 	<div>{pageStart}-{pageEnd} of {totalCount}</div>
 	<div class="flex flex-row w-36 justify-center items-center">
@@ -38,7 +38,7 @@
 			disabled="{page === 1}"
 			on:click="{fetchLastPage}"
 			title="Previous"
-			data-test="prevPageCtrl"
+			data-testid="prevPageCtrl"
 		>
 			<Icon icon="{faAngleLeft}" />
 		</Button>
@@ -55,7 +55,7 @@
 			disabled="{totalCount === 0 || page === pages}"
 			on:click="{fetchNextPage}"
 			title="Next"
-			data-test="nextPageCtrl"
+			data-testid="nextPageCtrl"
 		>
 			<Icon icon="{faAngleRight}" />
 		</Button>
