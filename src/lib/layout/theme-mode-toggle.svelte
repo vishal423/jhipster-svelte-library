@@ -1,5 +1,5 @@
 <script>
-	import { browser } from '$app/env'
+	import { browser } from '$app/environment'
 	import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon'
 	import { faSun } from '@fortawesome/free-solid-svg-icons/faSun'
 
