@@ -1,5 +1,5 @@
 <script>
-	import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch'
+	import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from './icon.svelte'
 

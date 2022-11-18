@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
-	import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch'
+	import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from '$lib/icon.svelte'
 	import Form from './form.svelte'

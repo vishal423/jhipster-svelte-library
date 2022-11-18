@@ -1,7 +1,9 @@
 <script>
 	import { afterUpdate, createEventDispatcher } from 'svelte'
-	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle'
-	import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown'
+	import {
+		faExclamationCircle,
+		faCaretDown,
+	} from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from './icon.svelte'
 	import CheckboxControl from './checkbox-control.svelte'

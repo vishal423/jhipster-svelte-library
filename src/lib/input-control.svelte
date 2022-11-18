@@ -1,7 +1,9 @@
 <script>
 	import { afterUpdate, createEventDispatcher } from 'svelte'
-	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle'
-	import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
+	import {
+		faExclamationCircle,
+		faTimes,
+	} from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from './icon.svelte'
 	import Button from './button.svelte'

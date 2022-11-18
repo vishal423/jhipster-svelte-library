@@ -1,5 +1,5 @@
 <script>
-	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle'
+	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 
 	import InputControl from './input-control.svelte'
 	import Icon from './icon.svelte'
