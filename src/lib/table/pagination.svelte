@@ -1,7 +1,9 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
-	import { faAngleLeft } from '@fortawesome/free-solid-svg-icons/faAngleLeft'
-	import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight'
+	import {
+		faAngleLeft,
+		faAngleRight,
+	} from '@fortawesome/free-solid-svg-icons'
 
 	import Button from '$lib/button.svelte'
 	import Icon from '$lib/icon.svelte'

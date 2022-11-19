@@ -1,7 +1,9 @@
 <script>
 	import { onMount, createEventDispatcher } from 'svelte'
-	import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck'
-	import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle'
+	import {
+		faCheck,
+		faExclamationTriangle,
+	} from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from '$lib/icon.svelte'
 

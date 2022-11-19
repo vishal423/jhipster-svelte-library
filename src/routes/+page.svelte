@@ -10,5 +10,8 @@
 		<li class:active="{$page.url.pathname === '/select'}">
 			<a sveltekit:prefetch href="/select">Select</a>
 		</li>
+		<li class:active="{$page.url.pathname === '/input'}">
+			<a sveltekit:prefetch href="/input">Input</a>
+		</li>
 	</ul>
 </nav>

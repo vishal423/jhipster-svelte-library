@@ -1,8 +1,10 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
-	import { faEye } from '@fortawesome/free-solid-svg-icons/faEye'
-	import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
-	import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt'
+	import {
+		faEye,
+		faPencilAlt,
+		faTrashAlt,
+	} from '@fortawesome/free-solid-svg-icons'
 
 	import Button from '$lib/button.svelte'
 	import Icon from '$lib/icon.svelte'

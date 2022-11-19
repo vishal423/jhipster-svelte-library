@@ -1,7 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
-	import { faBan } from '@fortawesome/free-solid-svg-icons/faBan'
-	import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt'
+	import { faBan, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 	import Button from '$lib/button.svelte'
 	import Icon from '$lib/icon.svelte'

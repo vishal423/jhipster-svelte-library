@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
-	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle'
+	import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from './icon.svelte'
 	import Password from './password.svelte'

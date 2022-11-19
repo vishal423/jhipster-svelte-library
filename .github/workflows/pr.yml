@@ -9,7 +9,7 @@ jobs:
         strategy:
             fail-fast: true
             matrix:
-                version: ['16.16']
+                version: ['16.x', '18.x']
         steps:
             - name: Checkout svelte library repository
               uses: actions/checkout@v2

@@ -1,8 +1,10 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
-	import { faSort } from '@fortawesome/free-solid-svg-icons/faSort'
-	import { faArrowDown } from '@fortawesome/free-solid-svg-icons/faArrowDown'
-	import { faArrowUp } from '@fortawesome/free-solid-svg-icons/faArrowUp'
+	import {
+		faSort,
+		faArrowDown,
+		faArrowUp,
+	} from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from '$lib/icon.svelte'
 
