@@ -23,6 +23,7 @@
 	transition:fade
 	class="fixed top-0 left-0 w-full h-full z-100 bg-gray-200 dark:bg-gray-700 opacity-60"
 	on:click="{closeModal}"
+	on:keydown="{closeModal}"
 ></div>
 
 <div
