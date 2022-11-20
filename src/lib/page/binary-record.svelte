@@ -11,6 +11,7 @@
 	<div
 		class="cursor-pointer text-primary-500 inline-block"
 		on:click|preventDefault="{openFile(field, fieldContentType)}"
+		on:keyup="{e => e.key === 'Enter' && openFile(field, fieldContentType)}"
 	>
 		{#if fieldType === 'image'}
 			<img

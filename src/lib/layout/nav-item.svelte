@@ -1,16 +1,12 @@
 <script>
-	import { page } from '$app/stores'
-
 	import Icon from '$lib/icon.svelte'
 
 	export let icon
 	export let label
 	export let route
+	export let pathname
 
-	$: textClass =
-		$page && $page.url && $page.url.pathname === route
-			? 'text-white'
-			: 'text-gray-400'
+	$: textClass = pathname === route ? 'text-white' : 'text-gray-400'
 </script>
 
 <div class="px-2 py-1 sm:flex sm:p-0">

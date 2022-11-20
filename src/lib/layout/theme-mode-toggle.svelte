@@ -1,8 +1,9 @@
 <script>
-	import { browser } from '$app/environment'
 	import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from '$lib/icon.svelte'
+
+	export let browser = false
 
 	let darkMode = false
 	let focused = false
