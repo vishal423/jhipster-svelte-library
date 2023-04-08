@@ -5,14 +5,14 @@ on:
             - main
 jobs:
     svelte-library:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-latest
         strategy:
             fail-fast: true
             matrix:
                 version: ['16.x', '18.x']
         steps:
             - name: Checkout svelte library repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node_version }}

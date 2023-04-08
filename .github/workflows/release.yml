@@ -4,14 +4,14 @@ on:
         types: [created]
 jobs:
     publish-svelte-library:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-latest
         strategy:
             fail-fast: true
             matrix:
                 version: ['18.x']
         steps:
             - name: Checkout svelte library repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node_version }}
@@ -21,7 +21,7 @@ jobs:
             - run: npm run test
             - run: npm run package
             - run: |
-                  cd package
+                  cd dist
                   npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
