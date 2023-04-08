@@ -5,7 +5,6 @@ module.exports = defineConfig({
 		baseUrl: 'http://localhost:3000',
 		video: false,
 		retries: 1,
-		experimentalSessionAndOrigin: true,
 		specPattern: 'cypress/integration/**/*.spec.js',
 		supportFile: 'cypress/support/index.js',
 	},
