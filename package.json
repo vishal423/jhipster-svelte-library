@@ -66,7 +66,7 @@
 		"svelte2tsx": "0.6.11",
 		"typescript": "5.0.3",
 		"vite": "4.2.1",
-		"@sveltejs/package": "1.0.0-next.6"
+		"@sveltejs/package": "2.0.2"
 	},
 	"type": "module"
 }
