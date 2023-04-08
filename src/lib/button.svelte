@@ -21,7 +21,7 @@
 		? 'border-2 border-gray-300 dark:border-gray-700 hover:border-gray-700 dark:hover:border-gray-300 '
 		: ''}
 {classes}"
-	disabled="{disabled}"
+	{disabled}
 	{...$$restProps}
 >
 	<slot />

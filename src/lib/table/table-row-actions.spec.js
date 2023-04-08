@@ -24,12 +24,8 @@ test('should not render state change actions', () => {
 	})
 
 	expect(screen.getByTestId('rowactions')).toHaveClass('hidden')
-	expect(
-		screen.queryByRole('button', { name: /edit/i })
-	).not.toBeInTheDocument()
-	expect(
-		screen.queryByRole('button', { name: /delete/i })
-	).not.toBeInTheDocument()
+	expect(screen.queryByRole('button', { name: /edit/i })).not.toBeInTheDocument()
+	expect(screen.queryByRole('button', { name: /delete/i })).not.toBeInTheDocument()
 })
 
 test('should disable state change actions', () => {

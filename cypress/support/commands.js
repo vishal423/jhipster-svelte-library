@@ -9,9 +9,7 @@ Cypress.Commands.add('unregisterServiceWorkers', () => {
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker
 			.getRegistrations()
-			.then(registrations =>
-				registrations.forEach(reg => reg.unregister())
-			)
+			.then(registrations => registrations.forEach(reg => reg.unregister()))
 	}
 })
 

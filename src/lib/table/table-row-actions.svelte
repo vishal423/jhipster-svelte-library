@@ -1,10 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
-	import {
-		faEye,
-		faPencilAlt,
-		faTrashAlt,
-	} from '@fortawesome/free-solid-svg-icons'
+	import { faEye, faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 	import Button from '$lib/button.svelte'
 	import Icon from '$lib/icon.svelte'
@@ -19,7 +15,7 @@
 
 <div
 	class="flex flex-row justify-center items-center leading-none"
-	class:hidden="{!visible}"
+	class:hidden={!visible}
 	data-testid="rowactions"
 >
 	<Button
@@ -29,43 +25,43 @@
 		classes="sm:my-0 {visible ? '' : 'hidden'}"
 		title="View"
 		aria-label="view"
-		on:click="{() =>
+		on:click={() =>
 			dispatch('view', {
 				id,
-			})}"
+			})}
 	>
-		<Icon icon="{faEye}" />
+		<Icon icon={faEye} />
 	</Button>
 	{#if renderStateChangeActions}
 		<Button
 			name="editBtn"
 			contextualColor="light"
-			disabled="{disableStateChangeActions}"
+			disabled={disableStateChangeActions}
 			size="small"
 			classes="sm:my-0 {visible ? '' : 'hidden'}"
 			title="Edit"
 			aria-label="edit"
-			on:click="{() =>
+			on:click={() =>
 				dispatch('update', {
 					id,
-				})}"
+				})}
 		>
-			<Icon icon="{faPencilAlt}" />
+			<Icon icon={faPencilAlt} />
 		</Button>
 		<Button
 			name="deleteBtn"
 			contextualColor="light"
-			disabled="{disableStateChangeActions}"
+			disabled={disableStateChangeActions}
 			size="small"
 			classes="sm:my-0 {visible ? '' : 'hidden'}"
 			title="Delete"
 			aria-label="delete"
-			on:click="{() =>
+			on:click={() =>
 				dispatch('delete', {
 					id,
-				})}"
+				})}
 		>
-			<Icon icon="{faTrashAlt}" />
+			<Icon icon={faTrashAlt} />
 		</Button>
 	{/if}
 	<slot />

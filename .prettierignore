@@ -1,4 +1,12 @@
+.DS_Store
 node_modules
-package
-.husky
-.svelte-kit
+/build
+/package
+/.husky
+/.svelte-kit
+.env
+.env.*
+
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

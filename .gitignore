@@ -7,5 +7,10 @@
 .vscode
 .DS_Store
 package
-.svelte-kit
+/.svelte-kit
+/build
+/package
+.env
+.env.*
 cypress/screenshots
+vite.config.js.timestamp-*

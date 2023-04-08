@@ -71,12 +71,7 @@ function required(validationArgs) {
 function numeric(validationArgs) {
 	const { message } = validationArgs
 	return function (value) {
-		if (
-			value === undefined ||
-			value === null ||
-			value === '' ||
-			isNaN(value)
-		) {
+		if (value === undefined || value === null || value === '' || isNaN(value)) {
 			return message || 'This field value should be numeric'
 		}
 	}
@@ -85,12 +80,7 @@ function numeric(validationArgs) {
 function min(validationArgs) {
 	const { message, min } = validationArgs
 	return function (value) {
-		if (
-			value !== undefined &&
-			value !== null &&
-			!isNaN(value) &&
-			Number(value) < min
-		) {
+		if (value !== undefined && value !== null && !isNaN(value) && Number(value) < min) {
 			return message || `The field value should be at least ${min}`
 		}
 	}
@@ -99,12 +89,7 @@ function min(validationArgs) {
 function max(validationArgs) {
 	const { message, max } = validationArgs
 	return function (value) {
-		if (
-			value !== undefined &&
-			value !== null &&
-			!isNaN(value) &&
-			Number(value) > max
-		) {
+		if (value !== undefined && value !== null && !isNaN(value) && Number(value) > max) {
 			return message || `The field value should be more than ${max}`
 		}
 	}
@@ -113,15 +98,8 @@ function max(validationArgs) {
 function minlength(validationArgs) {
 	const { message, minlength } = validationArgs
 	return function (value) {
-		if (
-			value !== undefined &&
-			value !== null &&
-			value.trim().length < minlength
-		) {
-			return (
-				message ||
-				`The field value should be greater than ${minlength} characters`
-			)
+		if (value !== undefined && value !== null && value.trim().length < minlength) {
+			return message || `The field value should be greater than ${minlength} characters`
 		}
 	}
 }
@@ -129,15 +107,8 @@ function minlength(validationArgs) {
 function maxlength(validationArgs) {
 	const { message, maxlength } = validationArgs
 	return function (value) {
-		if (
-			value !== undefined &&
-			value !== null &&
-			value.trim().length > maxlength
-		) {
-			return (
-				message ||
-				`The field value should be less than ${maxlength} characters`
-			)
+		if (value !== undefined && value !== null && value.trim().length > maxlength) {
+			return message || `The field value should be less than ${maxlength} characters`
 		}
 	}
 }
@@ -145,11 +116,7 @@ function maxlength(validationArgs) {
 function pattern(validationArgs) {
 	const { message, pattern } = validationArgs
 	return function (value) {
-		if (
-			value !== undefined &&
-			value !== null &&
-			!pattern.test(value.trim())
-		) {
+		if (value !== undefined && value !== null && !pattern.test(value.trim())) {
 			return message || `The field value should match the pattern`
 		}
 	}

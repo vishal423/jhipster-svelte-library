@@ -12,9 +12,7 @@ it('should display the delete dialog title and buttons', () => {
 		},
 	})
 
-	expect(screen.getByRole('heading')).toHaveTextContent(
-		'Confirm delete operation'
-	)
+	expect(screen.getByRole('heading')).toHaveTextContent('Confirm delete operation')
 	expect(screen.queryByRole('button', { name: /cancel/i })).toBeVisible()
 	expect(screen.queryByRole('button', { name: /delete/i })).toBeVisible()
 })

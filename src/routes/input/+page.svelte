@@ -24,10 +24,7 @@
 </svelte:head>
 
 <Page width="full">
-	<div
-		class="text-left flex flex-row justify-between items-center"
-		slot="header"
-	>
+	<div class="text-left flex flex-row justify-between items-center" slot="header">
 		<span>InputControl</span>
 	</div>
 	<Form testId="demo">
@@ -36,13 +33,11 @@
 			id="username"
 			label="Username"
 			name="username"
-			value="{login.name}"
-			on:input="{event => updateName(event)}"
+			value={login.name}
+			on:input={event => updateName(event)}
 			required
-			validations="{[
-				{ type: 'required', message: 'Username is mandatory' },
-			]}"
-			on:validate="{event => (validName = event.detail.valid)}"
+			validations={[{ type: 'required', message: 'Username is mandatory' }]}
+			on:validate={event => (validName = event.detail.valid)}
 		/>
 		<div><span>Control state is {validName}</span></div>
 
@@ -55,13 +50,11 @@
 			type="password"
 			label="Password"
 			name="password"
-			value="{login.password}"
-			on:input="{event => updatePassword(event)}"
+			value={login.password}
+			on:input={event => updatePassword(event)}
 			required
-			validations="{[
-				{ type: 'required', message: 'Password is mandatory' },
-			]}"
-			on:validate="{event => (validPassword = event.detail.valid)}"
+			validations={[{ type: 'required', message: 'Password is mandatory' }]}
+			on:validate={event => (validPassword = event.detail.valid)}
 		/>
 		<div><span>Control state is {validPassword}</span></div>
 	</Form>

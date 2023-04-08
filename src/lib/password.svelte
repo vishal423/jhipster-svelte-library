@@ -24,10 +24,10 @@
 
 <InputControl
 	type="password"
-	label="{label}"
-	value="{value}"
-	name="{name}"
-	validations="{validations}"
+	{label}
+	{value}
+	{name}
+	{validations}
 	on:input
 	on:validate
 	let:message
@@ -35,10 +35,10 @@
 	let:valid
 	{...$$restProps}
 >
-	<slot message="{message}" dirty="{dirty}" valid="{valid}">
+	<slot {message} {dirty} {valid}>
 		{#if dirty && !valid}
 			<div data-testid="{name}-error" class="flex items-center">
-				<Icon classes="mr-2" icon="{faExclamationCircle}" />
+				<Icon classes="mr-2" icon={faExclamationCircle} />
 				{message}
 			</div>
 		{:else}&nbsp;{/if}

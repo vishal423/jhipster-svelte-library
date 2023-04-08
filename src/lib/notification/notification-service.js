@@ -9,12 +9,8 @@ export default {
 	},
 	remove: (message, index) => {
 		notificationStore.update(oldState => {
-			const messageIndex =
-				index || oldState.findIndex(val => val.message === message)
-			return [
-				...oldState.slice(0, messageIndex),
-				...oldState.slice(messageIndex + 1),
-			]
+			const messageIndex = index || oldState.findIndex(val => val.message === message)
+			return [...oldState.slice(0, messageIndex), ...oldState.slice(messageIndex + 1)]
 		})
 	},
 }

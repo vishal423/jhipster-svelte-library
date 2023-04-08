@@ -1,9 +1,6 @@
 <script>
 	import { afterUpdate, createEventDispatcher } from 'svelte'
-	import {
-		faExclamationCircle,
-		faCaretDown,
-	} from '@fortawesome/free-solid-svg-icons'
+	import { faExclamationCircle, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 	import Icon from './icon.svelte'
 	import CheckboxControl from './checkbox-control.svelte'
@@ -38,9 +35,7 @@
 	$: pristineOrValid = pristine || valid
 	$: focusedAndValidOrPristine = focused && (!dirty || valid)
 	$: dirtyAndInvalid = dirty && !valid
-	$: isRequired =
-		validations.find(validation => validation.type === 'required') !==
-		undefined
+	$: isRequired = validations.find(validation => validation.type === 'required') !== undefined
 
 	function selectOption(event) {
 		let valueToDispatch
@@ -83,9 +78,7 @@
 	function validateRequired() {
 		if (isRequired && value && !value.length) {
 			valid = false
-			message = validations.find(
-				validation => validation.type === 'required'
-			).message
+			message = validations.find(validation => validation.type === 'required').message
 		} else {
 			valid = true
 		}
@@ -156,88 +149,81 @@
 <div class="mt-4 relative h-12">
 	<label
 		class="absolute left-0 px-1 ml-2 z-10 transition-all duration-200 rounded pointer-events-none"
-		class:z-30="{isOpen}"
-		class:-mt-2="{focusedOrContainsValue || isOpen}"
-		class:bg-white="{focusedOrContainsValue || isOpen}"
-		class:dark:bg-gray-800="{focusedOrContainsValue || isOpen}"
-		class:top-0="{focusedOrContainsValue || isOpen}"
-		class:pt-3="{!focusedOrContainsValue && !isOpen}"
-		class:pt-0="{focusedOrContainsValue || isOpen}"
-		class:text-xs="{focusedOrContainsValue || isOpen}"
-		class:text-gray-700="{!focused}"
-		class:dark:text-gray-200="{!focused}"
-		class:text-primary-700="{focusedAndValidOrPristine}"
-		class:dark:text-primary-500="{focusedAndValidOrPristine}"
-		class:text-red-600="{dirtyAndInvalid && (focused || isOpen)}"
-		class:dark:text-red-500="{dirtyAndInvalid && (focused || isOpen)}"
-		for="{name + randomSuffix}"
+		class:z-30={isOpen}
+		class:-mt-2={focusedOrContainsValue || isOpen}
+		class:bg-white={focusedOrContainsValue || isOpen}
+		class:dark:bg-gray-800={focusedOrContainsValue || isOpen}
+		class:top-0={focusedOrContainsValue || isOpen}
+		class:pt-3={!focusedOrContainsValue && !isOpen}
+		class:pt-0={focusedOrContainsValue || isOpen}
+		class:text-xs={focusedOrContainsValue || isOpen}
+		class:text-gray-700={!focused}
+		class:dark:text-gray-200={!focused}
+		class:text-primary-700={focusedAndValidOrPristine}
+		class:dark:text-primary-500={focusedAndValidOrPristine}
+		class:text-red-600={dirtyAndInvalid && (focused || isOpen)}
+		class:dark:text-red-500={dirtyAndInvalid && (focused || isOpen)}
+		for={name + randomSuffix}
 		>{label}<span class="ml-px">{isRequired ? '*' : ''}</span>
 	</label>
 	<div
 		class="w-full relative flex flex-row justify-center items-center rounded bg-white dark:bg-gray-800"
-		class:border="{!focused && !isOpen}"
-		class:border-2="{focused || isOpen}"
-		class:border-gray-400="{pristineOrValid}"
-		class:dark:border-gray-700="{pristineOrValid}"
-		class:border-primary-600="{focusedAndValidOrPristine ||
-			(isOpen && !dirtyAndInvalid)}"
-		class:dark:border-primary-500="{focusedAndValidOrPristine ||
-			(isOpen && !dirtyAndInvalid)}"
-		class:border-red-600="{dirtyAndInvalid}"
-		class:dark:border-red-500="{dirtyAndInvalid}"
-		class:z-20="{isOpen}"
-		class:rounded-bl-none="{isOpen}"
-		class:rounded-br-none="{isOpen}"
+		class:border={!focused && !isOpen}
+		class:border-2={focused || isOpen}
+		class:border-gray-400={pristineOrValid}
+		class:dark:border-gray-700={pristineOrValid}
+		class:border-primary-600={focusedAndValidOrPristine || (isOpen && !dirtyAndInvalid)}
+		class:dark:border-primary-500={focusedAndValidOrPristine || (isOpen && !dirtyAndInvalid)}
+		class:border-red-600={dirtyAndInvalid}
+		class:dark:border-red-500={dirtyAndInvalid}
+		class:z-20={isOpen}
+		class:rounded-bl-none={isOpen}
+		class:rounded-br-none={isOpen}
 	>
 		<input
 			class="px-3 py-3 w-full shadow-none dark:bg-gray-800 outline-none focus:ring-0 overflow-ellipsis whitespace-nowrap overflow-hidden rounded"
-			class:z-20="{isOpen}"
+			class:z-20={isOpen}
 			type="text"
-			name="{name}"
+			{name}
 			readonly
-			id="{name + randomSuffix}"
-			value="{displayName && displayName.length
-				? displayName.join(', ')
-				: null}"
+			id={name + randomSuffix}
+			value={displayName && displayName.length ? displayName.join(', ') : null}
 			autocomplete="off"
-			on:input="{event => toggleOptions(event)}"
-			on:keydown="{event => navigateToFirstOption(event)}"
-			on:focus="{event => ((focused = true), toggleOptions(event))}"
-			on:blur="{() => (focused = false)}"
+			on:input={event => toggleOptions(event)}
+			on:keydown={event => navigateToFirstOption(event)}
+			on:focus={event => ((focused = true), toggleOptions(event))}
+			on:blur={() => (focused = false)}
 			{...$$restProps}
 		/>
 		<button
 			type="button"
 			aria-label="Expand select options"
 			tabindex="-1"
-			class:z-20="{isOpen}"
+			class:z-20={isOpen}
 			class="focus:outline-none focus:ring-0"
-			on:keydown="{event => navigateToFirstOption(event)}"
-			on:click|preventDefault="{() => toggleOptions()}"
+			on:keydown={event => navigateToFirstOption(event)}
+			on:click|preventDefault={() => toggleOptions()}
 		>
-			<Icon
-				classes="{isOpen ? 'opacity-100' : 'opacity-70'}"
-				icon="{faCaretDown}"
-			/>
+			<Icon classes={isOpen ? 'opacity-100' : 'opacity-70'} icon={faCaretDown} />
 		</button>
 	</div>
 	{#if isOpen}
 		<button
 			data-testid="{name}-bg"
 			tabindex="-1"
-			on:click|preventDefault="{() => (isOpen = false)}"
+			on:click|preventDefault={() => (isOpen = false)}
 			class="fixed block inset-0 w-full h-full z-100 bg-gray-200 dark:bg-gray-700 opacity-50 cursor-default"
-			on:keydown|preventDefault="{event => handleEscKey(event)}"></button>
+			on:keydown|preventDefault={event => handleEscKey(event)}
+		/>
 	{/if}
 	<div
-		bind:this="{selectOptions}"
-		on:keydown|preventDefault="{event => navigateOptions(event)}"
+		bind:this={selectOptions}
+		on:keydown|preventDefault={event => navigateOptions(event)}
 		data-testid="{name}-options"
-		class:hidden="{!isOpen}"
+		class:hidden={!isOpen}
 		class="absolute left-0 w-full max-h-60 overflow-auto py-2 bg-white dark:bg-gray-800 border-b-2 rounded shadow-md border-2 z-30 border-t-0 rounded-tl-none rounded-tr-none"
-		class:border-primary-600="{focusedAndValidOrPristine ||
-			!dirtyAndInvalid}"
-		class:border-red-600="{dirtyAndInvalid}"
+		class:border-primary-600={focusedAndValidOrPristine || !dirtyAndInvalid}
+		class:border-red-600={dirtyAndInvalid}
 	>
 		{#each options.data as option (typeof option.value === 'object' ? option.value[options.idField] : option.value)}
 			<div
@@ -245,18 +231,16 @@
 			>
 				<CheckboxControl
 					tabindex="-1"
-					checked="{value &&
+					checked={value &&
 						(typeof option.value === 'object'
 							? value.find(
-									val =>
-										val[options.idField] ===
-										option.value[options.idField]
+									val => val[options.idField] === option.value[options.idField]
 							  ) !== undefined
-							: value.includes(option.value))}"
-					value="{typeof option.value === 'object'
+							: value.includes(option.value))}
+					value={typeof option.value === 'object'
 						? JSON.stringify(option.value)
-						: option.value}"
-					on:change="{event => selectOption(event)}"
+						: option.value}
+					on:change={event => selectOption(event)}
 					>{typeof option.value === 'object'
 						? option.value[options.nameField]
 						: option.name}</CheckboxControl
@@ -266,10 +250,10 @@
 	</div>
 </div>
 <div class="flex flex-col mt-1 pr-3 text-xs text-red-600 dark:text-red-500">
-	<slot message="{message}" dirty="{dirty}" valid="{valid}">
+	<slot {message} {dirty} {valid}>
 		{#if dirty && !valid}
 			<div data-testid="{name}-error" class="flex items-center">
-				<Icon classes="mr-2" icon="{faExclamationCircle}" />
+				<Icon classes="mr-2" icon={faExclamationCircle} />
 				{message}
 			</div>
 		{:else}&nbsp;{/if}

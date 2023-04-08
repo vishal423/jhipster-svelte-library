@@ -6,8 +6,8 @@
 <tr
 	class="border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-500 dark:text-gray-400 hover:shadow-md {classes}"
 	{...$$restProps}
-	on:mouseenter="{() => (showActions = true)}"
-	on:mouseleave="{() => (showActions = false)}"
+	on:mouseenter={() => (showActions = true)}
+	on:mouseleave={() => (showActions = false)}
 >
-	<slot showActions="{showActions}" />
+	<slot {showActions} />
 </tr>

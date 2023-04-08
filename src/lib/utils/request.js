@@ -1,12 +1,6 @@
 import notificationService from '../notification/notification-service'
 
-export function request(
-	url,
-	method = 'GET',
-	body = undefined,
-	headers = {},
-	notify = true
-) {
+export function request(url, method = 'GET', body = undefined, headers = {}, notify = true) {
 	const xhrHeaders = { ...headers, 'X-Requested-With': 'XMLHttpRequest' }
 	return fetch(url, prepareRequest(method, body, xhrHeaders))
 		.then(response => handleResponse(response, notify))
@@ -26,8 +20,7 @@ function prepareRequest(method, body, headers) {
 			}
 		}
 	}
-	const authToken =
-		localStorage.getItem('authToken') || sessionStorage.getItem('authToken')
+	const authToken = localStorage.getItem('authToken') || sessionStorage.getItem('authToken')
 	if (authToken) {
 		requestHeaders = {
 			...requestHeaders,
@@ -86,9 +79,7 @@ function handleResponse(response, notify) {
 
 function processAlertHeaders(response, isSuccessResponse) {
 	for (let key of response.headers.keys()) {
-		const isPresent = key
-			.toLowerCase()
-			.endsWith(isSuccessResponse ? 'app-alert' : 'app-error')
+		const isPresent = key.toLowerCase().endsWith(isSuccessResponse ? 'app-alert' : 'app-error')
 		if (isPresent) {
 			notificationService.add(
 				response.headers.get(key),

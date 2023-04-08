@@ -27,10 +27,7 @@
 </svelte:head>
 
 <Page width="full">
-	<div
-		class="text-left flex flex-row justify-between items-center"
-		slot="header"
-	>
+	<div class="text-left flex flex-row justify-between items-center" slot="header">
 		<span>SelectControl</span>
 	</div>
 	<Form testId="demo">
@@ -38,19 +35,19 @@
 		<SelectControl
 			name="blog"
 			label="Blog"
-			value="{post.blog ? [post.blog] : []}"
-			options="{{
+			value={post.blog ? [post.blog] : []}
+			options={{
 				nameField: 'name',
 				idField: 'id',
 				data: blogs.map(blog => ({
 					value: blog,
 				})),
-			}}"
-			on:validate="{event => {
+			}}
+			on:validate={event => {
 				validBlog = event.detail.valid
-			}}"
-			validations="{[]}"
-			on:select="{event => updateBlog(event)}"
+			}}
+			validations={[]}
+			on:select={event => updateBlog(event)}
 		/>
 		<div><span>Control state is {validBlog}</span></div>
 
@@ -61,20 +58,20 @@
 		<SelectControl
 			name="tags"
 			label="Tags"
-			value="{post.tags}"
+			value={post.tags}
 			multiple="true"
-			options="{{
+			options={{
 				nameField: 'name',
 				idField: 'id',
 				data: tags.map(tag => ({
 					value: tag,
 				})),
-			}}"
-			on:validate="{event => {
+			}}
+			on:validate={event => {
 				validTag = event.detail.valid
-			}}"
-			validations="{[]}"
-			on:select="{event => updateTag(event)}"
+			}}
+			validations={[]}
+			on:select={event => updateTag(event)}
 		/>
 		<div><span>Control state is {validTag}</span></div>
 	</Form>

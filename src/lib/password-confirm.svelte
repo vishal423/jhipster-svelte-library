@@ -28,8 +28,7 @@
 	let validPassword = false
 	let validConfirmPassword = false
 
-	$: confirmPasswordMismatch =
-		validConfirmPassword && value !== confirmPassword
+	$: confirmPasswordMismatch = validConfirmPassword && value !== confirmPassword
 
 	function handlePassword(event) {
 		value = event.target.value
@@ -46,38 +45,36 @@
 		dispatch('validate', { valid: isValid() })
 	}
 	function isValid() {
-		return (
-			validPassword && validConfirmPassword && value === confirmPassword
-		)
+		return validPassword && validConfirmPassword && value === confirmPassword
 	}
 </script>
 
 <Password
-	name="{name}"
-	label="{label}"
-	value="{value}"
-	validations="{validations}"
-	on:input="{handlePassword}"
-	on:validate="{handlePasswordValidation}"
+	{name}
+	{label}
+	{value}
+	{validations}
+	on:input={handlePassword}
+	on:validate={handlePasswordValidation}
 />
 
 <Password
 	label="Confirm {label}"
-	value="{confirmPassword}"
+	value={confirmPassword}
 	name="{name}Confirm"
-	validations="{validations}"
-	on:input="{event => (confirmPassword = event.target.value)}"
-	on:validate="{handleConfirmPasswordValidation}"
+	{validations}
+	on:input={event => (confirmPassword = event.target.value)}
+	on:validate={handleConfirmPasswordValidation}
 	let:message
 	let:dirty
 	let:valid
 >
 	<div data-testid="{name}Confirm-error" class="flex items-center">
 		{#if confirmPasswordMismatch}
-			<Icon classes="mr-2" icon="{faExclamationCircle}" />
+			<Icon classes="mr-2" icon={faExclamationCircle} />
 			Password and its confirmation do not match
 		{:else if dirty && !valid}
-			<Icon classes="mr-2" icon="{faExclamationCircle}" />
+			<Icon classes="mr-2" icon={faExclamationCircle} />
 			{message}
 		{:else}&nbsp;{/if}
 	</div>

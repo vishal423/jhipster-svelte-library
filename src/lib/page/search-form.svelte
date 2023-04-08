@@ -35,20 +35,20 @@
 	<div class="flex flex-row justify-center items-center sm:w-full">
 		<SearchControl
 			label="{labelPrefix} {name}"
-			name="{name}"
-			value="{criteria}"
+			{name}
+			value={criteria}
 			placeholder="{labelPrefix} {name}"
-			hasSearchBtn="{!isFilter}"
-			on:input="{updateCriteria}"
+			hasSearchBtn={!isFilter}
+			on:input={updateCriteria}
 		/>
 		{#if !isFilter}
 			<button
 				type="submit"
 				class="p-4 leading-none font-bold rounded-r-full transition-colors duration-200 disabled:opacity-75 disabled:pointer-events-none bg-primary-700 text-white dark:bg-primary-500 dark:text-gray-100 hover:bg-primary-800 dark:hover:bg-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-500"
-				on:click|preventDefault="{handleSearch}"
+				on:click|preventDefault={handleSearch}
 				aria-label="{labelPrefix} {name}"
 			>
-				<Icon classes="mr-2" icon="{faSearch}" />
+				<Icon classes="mr-2" icon={faSearch} />
 			</button>
 		{/if}
 	</div>

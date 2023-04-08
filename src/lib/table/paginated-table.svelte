@@ -50,12 +50,8 @@
 	$: {
 		if (clientSidePagination && paginationKey) {
 			const pageStart = totalCount === 0 ? 0 : (page - 1) * pageSize
-			const pageEnd =
-				page * pageSize > totalCount ? totalCount : page * pageSize
-			const paginatedRecords = props[paginationKey].slice(
-				pageStart,
-				pageEnd
-			)
+			const pageEnd = page * pageSize > totalCount ? totalCount : page * pageSize
+			const paginatedRecords = props[paginationKey].slice(pageStart, pageEnd)
 			paginatedProps = { ...props, [paginationKey]: paginatedRecords }
 		} else {
 			paginatedProps = props
@@ -63,24 +59,12 @@
 	}
 </script>
 
-<Pagination
-	totalCount="{totalCount}"
-	pageSize="{pageSize}"
-	page="{page}"
-	classes="my-2"
-	on:pagechange="{handlePageChange}"
-/>
+<Pagination {totalCount} {pageSize} {page} classes="my-2" on:pagechange={handlePageChange} />
 <svelte:component
-	this="{component}"
-	sortPredicate="{sortPredicate}"
+	this={component}
+	{sortPredicate}
 	{...paginatedProps}
-	on:sortbypredicate="{sortByPredicate}"
-	bind:this="{instance}"
+	on:sortbypredicate={sortByPredicate}
+	bind:this={instance}
 />
-<Pagination
-	totalCount="{totalCount}"
-	pageSize="{pageSize}"
-	page="{page}"
-	classes="mt-4"
-	on:pagechange="{handlePageChange}"
-/>
+<Pagination {totalCount} {pageSize} {page} classes="mt-4" on:pagechange={handlePageChange} />

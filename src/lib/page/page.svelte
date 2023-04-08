@@ -12,7 +12,7 @@
 >
 	<div class="py-4 w-full {widthClass}">
 		{#if $$slots.header}
-			<PageHeader testId="{testId}">
+			<PageHeader {testId}>
 				<slot name="header" />
 			</PageHeader>
 		{/if}

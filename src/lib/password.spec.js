@@ -58,9 +58,7 @@ test('should validate password control custom required constraint message', asyn
 		props: {
 			id: 'password',
 			value: 'someLongValue',
-			validations: [
-				{ type: 'required', message: 'Password is mandatory field' },
-			],
+			validations: [{ type: 'required', message: 'Password is mandatory field' }],
 		},
 	})
 
@@ -113,8 +111,7 @@ test('should validate password control custom minimum length constraint message'
 				{
 					type: 'minlength',
 					minlength: 2,
-					message:
-						'Password is required to be at least 2 characters long',
+					message: 'Password is required to be at least 2 characters long',
 				},
 			],
 		},

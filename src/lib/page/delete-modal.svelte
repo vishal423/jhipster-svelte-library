@@ -10,24 +10,24 @@
 	const dispatch = createEventDispatcher()
 </script>
 
-<Modal title="Confirm delete operation" on:close="{() => dispatch('close')}">
+<Modal title="Confirm delete operation" on:close={() => dispatch('close')}>
 	<p class="w-[450px]"><slot name="confirm" /></p>
 	<div slot="footer">
 		<Button
 			name="cancelBtn"
 			contextualColor="secondary"
 			classes="mr-4"
-			on:click="{() => dispatch('close')}"
+			on:click={() => dispatch('close')}
 		>
-			<Icon classes="mr-2" icon="{faBan}" />Cancel
+			<Icon classes="mr-2" icon={faBan} />Cancel
 		</Button>
 
 		<Button
 			name="confirmDeleteBtn"
 			contextualColor="danger"
-			on:click="{() => dispatch('delete', { id })}"
+			on:click={() => dispatch('delete', { id })}
 		>
-			<Icon classes="mr-2" icon="{faTrashAlt}" />Delete
+			<Icon classes="mr-2" icon={faTrashAlt} />Delete
 		</Button>
 	</div>
 </Modal>

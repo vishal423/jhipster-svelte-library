@@ -1,11 +1,11 @@
 {
-	"printWidth": 80,
+	"printWidth": 100,
 	"tabWidth": 4,
 	"useTabs": true,
 	"semi": false,
 	"singleQuote": true,
 	"arrowParens": "avoid",
-	"svelteSortOrder": "options-scripts-styles-markup",
-	"svelteStrictMode": true,
-	"svelteAllowShorthand": true
+	"plugins": ["prettier-plugin-svelte"],
+	"pluginSearchDirs": ["."],
+	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }

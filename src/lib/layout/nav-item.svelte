@@ -11,13 +11,13 @@
 
 <div class="px-2 py-1 sm:flex sm:p-0">
 	<a
-		href="{route}"
+		href={route}
 		on:click
 		class="flex items-center px-2 py-1 sm:py-1 rounded font-semibold
 			hover:text-white hover:bg-gray-700 focus:outline-none focus:ring focus:ring-primary-500 {textClass}"
 		{...$$restProps}
 	>
-		<Icon classes="mr-1" icon="{icon}" />
+		<Icon classes="mr-1" {icon} />
 		{label}</a
 	>
 </div>

@@ -4,14 +4,14 @@
 
 <nav>
 	<ul>
-		<li class:active="{$page.url.pathname === '/'}">
-			<a sveltekit:prefetch href="/">Home</a>
+		<li class:active={$page.url.pathname === '/'}>
+			<a data-sveltekit-preload-data href="/">Home</a>
 		</li>
-		<li class:active="{$page.url.pathname === '/select'}">
-			<a sveltekit:prefetch href="/select">Select</a>
+		<li class:active={$page.url.pathname === '/select'}>
+			<a data-sveltekit-preload-data href="/select">Select</a>
 		</li>
-		<li class:active="{$page.url.pathname === '/input'}">
-			<a sveltekit:prefetch href="/input">Input</a>
+		<li class:active={$page.url.pathname === '/input'}>
+			<a data-sveltekit-preload-data href="/input">Input</a>
 		</li>
 	</ul>
 </nav>

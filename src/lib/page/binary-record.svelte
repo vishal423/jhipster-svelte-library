@@ -10,15 +10,11 @@
 {#if field}
 	<div
 		class="cursor-pointer text-primary-500 inline-block"
-		on:click|preventDefault="{openFile(field, fieldContentType)}"
-		on:keyup="{e => e.key === 'Enter' && openFile(field, fieldContentType)}"
+		on:click|preventDefault={openFile(field, fieldContentType)}
+		on:keyup={e => e.key === 'Enter' && openFile(field, fieldContentType)}
 	>
 		{#if fieldType === 'image'}
-			<img
-				src="{'data:' + fieldContentType + ';base64,' + field}"
-				class="max-h-8"
-				alt="{name}"
-			/>
+			<img src={'data:' + fieldContentType + ';base64,' + field} class="max-h-8" alt={name} />
 		{:else}
 			View
 		{/if}
