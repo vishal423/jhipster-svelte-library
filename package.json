@@ -40,8 +40,28 @@
 	},
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"svelte": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./notification": {
+			"svelte": "./dist/notification/index.js",
+			"types": "./dist/notification/index.d.ts"
+		},
+		"./layout": {
+			"svelte": "./dist/layout/index.js",
+			"types": "./dist/layout/index.d.ts"
+		},
+		"./page": {
+			"svelte": "./dist/page/index.js",
+			"types": "./dist/page/index.d.ts"
+		},
+		"./table": {
+			"svelte": "./dist/table/index.js",
+			"types": "./dist/table/index.d.ts"
+		},
+		"./utils": {
+			"default": "./dist/utils/index.js",
+			"types": "./dist/utils/index.d.ts"
 		}
 	},
 	"files": [
