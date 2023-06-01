@@ -103,7 +103,7 @@
 		"svelte2tsx": "0.6.15",
 		"tslib": "2.5.2",
 		"typescript": "5.0.4",
-		"vite": "4.3.8"
+		"vite": "4.3.9"
 	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
