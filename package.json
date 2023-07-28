@@ -91,7 +91,7 @@
 		"eslint-plugin-svelte3": "4.0.0",
 		"eslint-plugin-testing-library": "5.11.0",
 		"husky": "8.0.3",
-		"jest": "29.5.0",
+		"jest": "29.6.2",
 		"jest-environment-jsdom": "29.5.0",
 		"jest-svelte-resolver": "1.0.0",
 		"prettier": "2.8.8",
