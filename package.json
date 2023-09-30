@@ -1,6 +1,6 @@
 {
 	"name": "jhipster-svelte-library",
-	"version": "0.12.0",
+	"version": "0.12.1",
 	"description": "Svelte components and utility functions library for use in the JHipster generated projects.",
 	"keywords": [
 		"svelte",
@@ -41,30 +41,29 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"import": "./dist/index.js"
 		},
 		"./notification": {
 			"types": "./dist/notification/index.d.ts",
-			"svelte": "./dist/notification/index.js"
+			"import": "./dist/notification/index.js"
 		},
 		"./layout": {
 			"types": "./dist/layout/index.d.ts",
-			"svelte": "./dist/layout/index.js"
+			"import": "./dist/layout/index.js"
 		},
 		"./page": {
 			"types": "./dist/page/index.d.ts",
-			"svelte": "./dist/page/index.js"
+			"import": "./dist/page/index.js"
 		},
 		"./table": {
 			"types": "./dist/table/index.d.ts",
-			"svelte": "./dist/table/index.js"
+			"import": "./dist/table/index.js"
 		},
 		"./utils": {
 			"types": "./dist/utils/index.d.ts",
-			"svelte": "./dist/utils/index.js"
+			"import": "./dist/utils/index.js"
 		}
 	},
-	"svelte": "./dist/index.js",
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
