@@ -10,7 +10,7 @@ module.exports = {
 	moduleNameMapper: {
 		'^\\$lib(.*)$': '<rootDir>/src/lib$1',
 	},
-	setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+	setupFilesAfterEnv: ['<rootDir>/jest-setup.js'],
 	resolver: 'jest-svelte-resolver',
 	coverageDirectory: '<rootDir>/.svelte-kit/jest-coverage/',
 	cacheDirectory: '<rootDir>/.svelte-kit/jest-cache',

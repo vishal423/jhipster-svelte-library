@@ -9,6 +9,8 @@
 
 {#if field}
 	<div
+		role="button"
+		tabindex="0"
 		class="cursor-pointer text-primary-500 inline-block"
 		on:click|preventDefault={openFile(field, fieldContentType)}
 		on:keyup={e => e.key === 'Enter' && openFile(field, fieldContentType)}
