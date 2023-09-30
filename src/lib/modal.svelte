@@ -20,6 +20,8 @@
 
 <svelte:window on:keydown={handleKeydown} />
 <div
+	tabindex=-1
+	aria-hidden=true
 	transition:fade
 	class="fixed top-0 left-0 w-full h-full z-100 bg-gray-200 dark:bg-gray-700 opacity-60"
 	on:click={closeModal}
@@ -27,11 +29,13 @@
 />
 
 <div
+	role="dialog"
+	aria-labelledby="svlTitle"
 	data-testid="svlModal"
 	transition:fly={{ y: 200 }}
 	class="fixed bg-white dark:bg-gray-800 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-200 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md"
 >
-	<h1 class="p-4 m-0 border-b dark:border-gray-700 text-xl font-semibold">
+	<h1 id="svlTitle" class="p-4 m-0 border-b dark:border-gray-700 text-xl font-semibold">
 		{title}
 	</h1>
 	<div class="p-4 my-4">

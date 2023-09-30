@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
 import { jest } from '@jest/globals'
 import { render, fireEvent } from '@testing-library/svelte'
 import { screen } from '@testing-library/dom'
@@ -53,7 +52,7 @@ test('should dispatch the view event', async () => {
 	const mockHandler = jest.fn()
 	component.$on('view', mockHandler)
 
-	await fireEvent.click(button)
+	fireEvent.click(button)
 
 	expect(mockHandler).toHaveBeenCalled()
 	expect(mockHandler.mock.calls[0][0].detail).toStrictEqual({
@@ -73,7 +72,7 @@ test('should dispatch the update event', async () => {
 	const mockHandler = jest.fn()
 	component.$on('update', mockHandler)
 
-	await fireEvent.click(button)
+	fireEvent.click(button)
 
 	expect(mockHandler).toHaveBeenCalled()
 	expect(mockHandler.mock.calls[0][0].detail).toStrictEqual({
@@ -93,7 +92,7 @@ test('should dispatch the delete event', async () => {
 	const mockHandler = jest.fn()
 	component.$on('delete', mockHandler)
 
-	await fireEvent.click(button)
+	fireEvent.click(button)
 
 	expect(mockHandler).toHaveBeenCalled()
 	expect(mockHandler.mock.calls[0][0].detail).toStrictEqual({

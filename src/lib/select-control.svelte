@@ -216,7 +216,9 @@
 			on:keydown|preventDefault={event => handleEscKey(event)}
 		/>
 	{/if}
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<div
+		role="search"
 		bind:this={selectOptions}
 		on:keydown|preventDefault={event => navigateOptions(event)}
 		data-testid="{name}-options"

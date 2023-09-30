@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
 import { jest } from '@jest/globals'
 import { fireEvent, render } from '@testing-library/svelte'
 
@@ -29,7 +28,7 @@ it('should dispatch delete event', async () => {
 	const mockHandler = jest.fn()
 	component.$on('delete', mockHandler)
 
-	await fireEvent.click(button)
+	fireEvent.click(button)
 
 	expect(mockHandler).toHaveBeenCalled()
 	expect(mockHandler.mock.calls[0][0].detail).toStrictEqual({
@@ -49,7 +48,7 @@ it('should dispatch close event', async () => {
 	const mockHandler = jest.fn()
 	component.$on('close', mockHandler)
 
-	await fireEvent.click(button)
+	fireEvent.click(button)
 
 	expect(mockHandler).toHaveBeenCalled()
 	expect(mockHandler.mock.calls[0][0].detail).toBeNull()

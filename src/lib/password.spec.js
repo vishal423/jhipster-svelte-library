@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
 import { jest } from '@jest/globals'
 import { render, fireEvent } from '@testing-library/svelte'
 import { screen } from '@testing-library/dom'
@@ -18,7 +17,7 @@ test('should display valid password control', async () => {
 
 	const passwordInput = screen.getByLabelText(/password/i)
 
-	await fireEvent.input(passwordInput, { target: { value: 'newValue' } })
+	fireEvent.input(passwordInput, { target: { value: 'newValue' } })
 
 	expect(passwordInput).toHaveValue('newValue')
 
@@ -42,7 +41,7 @@ test('should validate password control default required constraint', async () =>
 
 	const passwordInput = screen.getByLabelText(/password/i)
 
-	await fireEvent.input(passwordInput, { target: { value: '' } })
+	fireEvent.input(passwordInput, { target: { value: '' } })
 
 	expect(passwordInput).toHaveValue('')
 
@@ -67,7 +66,7 @@ test('should validate password control custom required constraint message', asyn
 
 	const passwordInput = screen.getByLabelText(/password/i)
 
-	await fireEvent.input(passwordInput, { target: { value: '' } })
+	fireEvent.input(passwordInput, { target: { value: '' } })
 
 	expect(passwordInput).toHaveValue('')
 
@@ -91,7 +90,7 @@ test('should validate password control default minimum length constraint', async
 
 	const passwordInput = screen.getByLabelText(/password/i)
 
-	await fireEvent.input(passwordInput, { target: { value: 'ab' } })
+	fireEvent.input(passwordInput, { target: { value: 'ab' } })
 
 	expect(passwordInput).toHaveValue('ab')
 
@@ -122,7 +121,7 @@ test('should validate password control custom minimum length constraint message'
 
 	const passwordInput = screen.getByLabelText(/password/i)
 
-	await fireEvent.input(passwordInput, { target: { value: 'a' } })
+	fireEvent.input(passwordInput, { target: { value: 'a' } })
 
 	expect(passwordInput).toHaveValue('a')
 
@@ -146,7 +145,7 @@ test('should validate password control default maximum length constraint', async
 
 	const passwordInput = screen.getByLabelText(/password/i)
 
-	await fireEvent.input(passwordInput, {
+	fireEvent.input(passwordInput, {
 		target: {
 			value: 'loremipsumloremipsumloremipsumloremipsumloremipsumloremipsum',
 		},
@@ -183,7 +182,7 @@ test('should validate password control custom maximum length constraint message'
 
 	const passwordInput = screen.getByLabelText(/password/i)
 
-	await fireEvent.input(passwordInput, { target: { value: 'loremipsum' } })
+	fireEvent.input(passwordInput, { target: { value: 'loremipsum' } })
 
 	expect(passwordInput).toHaveValue('loremipsum')
 
