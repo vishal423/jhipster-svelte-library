@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals'
 import { render, fireEvent } from '@testing-library/svelte'
 import { screen } from '@testing-library/dom'
 
@@ -11,7 +10,7 @@ test('should display valid password confirm control', async () => {
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/^password/i)

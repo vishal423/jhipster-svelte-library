@@ -15,8 +15,10 @@
 		"es2017": true,
 		"browser": true,
 		"node": true,
-		"cypress/globals": true,
-		"jest": true
+		"cypress/globals": true
+	},
+	"globals" : {
+		"vi" : true
 	},
 	"plugins": ["svelte", "cypress", "jest-dom", "testing-library"],
 	"overrides": [

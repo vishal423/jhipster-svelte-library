@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals'
 import { render, fireEvent } from '@testing-library/svelte'
 import { screen } from '@testing-library/dom'
 
@@ -12,7 +11,7 @@ test('should display valid password control', async () => {
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/password/i)
@@ -36,7 +35,7 @@ test('should validate password control default required constraint', async () =>
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/password/i)
@@ -61,7 +60,7 @@ test('should validate password control custom required constraint message', asyn
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/password/i)
@@ -85,7 +84,7 @@ test('should validate password control default minimum length constraint', async
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/password/i)
@@ -116,7 +115,7 @@ test('should validate password control custom minimum length constraint message'
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/password/i)
@@ -140,7 +139,7 @@ test('should validate password control default maximum length constraint', async
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/password/i)
@@ -177,7 +176,7 @@ test('should validate password control custom maximum length constraint message'
 		},
 	})
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('validate', mockHandler)
 
 	const passwordInput = screen.getByLabelText(/password/i)
