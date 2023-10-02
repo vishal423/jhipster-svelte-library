@@ -1,7 +1,6 @@
-import { jest } from '@jest/globals'
 import { fireEvent, render } from '@testing-library/svelte'
-
 import { screen } from '@testing-library/dom'
+
 import DeleteModal from './delete-modal.svelte'
 
 it('should display the delete dialog title and buttons', () => {
@@ -25,7 +24,7 @@ it('should dispatch delete event', async () => {
 
 	const button = screen.getByRole('button', { name: /delete/i })
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('delete', mockHandler)
 
 	fireEvent.click(button)
@@ -45,7 +44,7 @@ it('should dispatch close event', async () => {
 
 	const button = screen.getByRole('button', { name: /cancel/i })
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('close', mockHandler)
 
 	fireEvent.click(button)

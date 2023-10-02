@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals'
 import { render, fireEvent } from '@testing-library/svelte'
 import { screen } from '@testing-library/dom'
 
@@ -49,7 +48,7 @@ test('should dispatch the view event', async () => {
 	})
 	const button = screen.getByRole('button', { name: /view/i })
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('view', mockHandler)
 
 	fireEvent.click(button)
@@ -69,7 +68,7 @@ test('should dispatch the update event', async () => {
 	})
 	const button = screen.getByRole('button', { name: /edit/i })
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('update', mockHandler)
 
 	fireEvent.click(button)
@@ -89,7 +88,7 @@ test('should dispatch the delete event', async () => {
 	})
 	const button = screen.getByRole('button', { name: /delete/i })
 
-	const mockHandler = jest.fn()
+	const mockHandler = vi.fn()
 	component.$on('delete', mockHandler)
 
 	fireEvent.click(button)
