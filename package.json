@@ -78,7 +78,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "2.1.0",
-		"@sveltejs/kit": "1.27.1",
+		"@sveltejs/kit": "1.27.5",
 		"@sveltejs/package": "2.2.2",
 		"@testing-library/jest-dom": "6.1.4",
 		"@testing-library/svelte": "4.0.4",
