@@ -79,7 +79,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "2.1.1",
 		"@sveltejs/kit": "1.27.7",
-		"@sveltejs/package": "2.2.3",
+		"@sveltejs/package": "2.2.4",
 		"@testing-library/jest-dom": "6.1.5",
 		"@testing-library/svelte": "4.0.5",
 		"@vitest/ui": "1.1.0",
