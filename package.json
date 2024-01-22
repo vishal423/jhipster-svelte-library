@@ -82,7 +82,7 @@
 		"@sveltejs/package": "2.2.3",
 		"@testing-library/jest-dom": "6.1.6",
 		"@testing-library/svelte": "4.0.5",
-		"@vitest/ui": "1.1.1",
+		"@vitest/ui": "1.2.1",
 		"@vitest/coverage-v8": "1.1.0",
 		"autoprefixer": "10.4.16",
 		"cypress": "13.6.1",
