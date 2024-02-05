@@ -80,7 +80,7 @@
 		"@sveltejs/adapter-auto": "2.1.1",
 		"@sveltejs/kit": "1.27.7",
 		"@sveltejs/package": "2.2.3",
-		"@testing-library/jest-dom": "6.1.6",
+		"@testing-library/jest-dom": "6.4.1",
 		"@testing-library/svelte": "4.0.5",
 		"@vitest/ui": "1.1.1",
 		"@vitest/coverage-v8": "1.1.0",
