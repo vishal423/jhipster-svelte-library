@@ -83,7 +83,7 @@
 		"@testing-library/jest-dom": "6.4.2",
 		"@testing-library/svelte": "4.1.0",
 		"@vitest/ui": "1.2.2",
-		"@vitest/coverage-v8": "1.1.0",
+		"@vitest/coverage-v8": "1.2.2",
 		"autoprefixer": "10.4.19",
 		"cypress": "13.7.1",
 		"eslint": "8.57.0",
