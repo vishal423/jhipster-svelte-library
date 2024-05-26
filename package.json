@@ -82,8 +82,8 @@
 		"@sveltejs/package": "2.3.1",
 		"@testing-library/jest-dom": "6.4.5",
 		"@testing-library/svelte": "5.1.0",
-		"@vitest/ui": "1.2.2",
-		"@vitest/coverage-v8": "1.2.2",
+		"@vitest/ui": "1.6.0",
+		"@vitest/coverage-v8": "1.6.0",
 		"autoprefixer": "10.4.19",
 		"cypress": "13.10.0",
 		"eslint": "8.57.0",
@@ -104,7 +104,7 @@
 		"tslib": "2.6.2",
 		"typescript": "5.4.5",
 		"vite": "4.5.0",
-		"vitest" : "1.1.0"
+		"vitest" : "1.6.0"
 	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
